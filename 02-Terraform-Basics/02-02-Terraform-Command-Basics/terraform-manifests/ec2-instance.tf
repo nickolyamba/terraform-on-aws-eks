@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      #version = "~> 3.21" # Optional but recommended in production
+      #version = "~> 4.48" # Optional but recommended in production
     }
   }
 }
@@ -16,6 +16,6 @@ provider "aws" {
 
 # Resource Block
 resource "aws_instance" "ec2demo" {
-  ami           = "ami-0533f2ba8a1995cf9" # Amazon Linux in us-east-1, update as per your region
-  instance_type = "t2.micro"
+  ami           = "ami-0b5eea76982371e91" # Amazon Linux in us-east-1, update as per your region
+  instance_type = "t1.micro"
 }
