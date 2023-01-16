@@ -14,6 +14,7 @@ output "for_output_list" {
 }
 
 # Output - For Loop with Map
+# { instance.id => instance.public_dns }
 output "for_output_map1" {
   description = "For Loop with Map"
   value = {for instance in aws_instance.myec2vm: instance.id => instance.public_dns}
@@ -22,7 +23,7 @@ output "for_output_map1" {
 # Output - For Loop with Map Advanced
 output "for_output_map2" {
   description = "For Loop with Map - Advanced"
-  value = {for c, instance in aws_instance.myec2vm: c => instance.public_dns}
+  value = {for idx, value in aws_instance.myec2vm: idx => value.public_dns}
 }
 
 # Output Legacy Splat Operator (Legacy) - Returns the List
